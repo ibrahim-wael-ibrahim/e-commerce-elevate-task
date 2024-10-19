@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    @apply text-customGray;
+  }
+}
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  @apply bg-customYellow;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+body {
+  @apply w-screen overflow-x-hidden;
+}
+
+.active {
+  @apply bg-customYellow;
+}
+
+.cart__lines,
+.cart__top,
+.cart__wheel1,
+.cart__wheel2,
+.cart__wheel-stroke {
+  @apply animate-cartLines;
+}
+
+.cart__top {
+  @apply animate-cartTop;
+}
+
+.cart__wheel1 {
+  @apply animate-cartWheel1;
+  transform: rotate(-0.25turn);
+  transform-origin: 43px 111px;
+}
+
+.cart__wheel2 {
+  @apply animate-cartWheel2;
+  transform-origin: 102px 111px;
+}
+
+.cart__wheel-stroke {
+  @apply animate-cartWheelStroke;
+}
