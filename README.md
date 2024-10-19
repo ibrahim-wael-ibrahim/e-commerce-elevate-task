@@ -137,7 +137,7 @@ const { ModalUI, setModalIsOpen } = useModal("Confirm action?", handleCallback);
 A custom hook that fetches a list of products from the Fake Store API. It manages loading, error, and successful data fetch states using a `useReducer` approach.
 
 ```js
-const { products, loading, error } = useFetchProducts();
+const { products, loading, error_message } = useFetchProducts();
 ```
 
 ### `BubbliesCart`
