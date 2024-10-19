@@ -187,7 +187,3 @@ npm run dev
 ## Live Demo
 
 You can view the live demo of the project here: [Live Demo Link](https://e-commerce-elevate-task.netlify.app/)
-
----
-
-Feel free to adjust any parts of the README according to your preferences!
