@@ -1,6 +1,6 @@
 export default function HeroSection() {
   return (
-    <section className="h-[calc(100vh-60px)] bg-[url('/assets/image/hero-image.jpg')] bg-top bg-cover  bg-fixed">
+    <section className="h-[calc(100vh-60px)] bg-[url('/assets/image/hero-image.jpg')] bg-top bg-cover  bg-fixed text-customGray">
       <div className="grid justify-center items-center w-full h-full">
         <article className="mx-auto">
           <div className="p-8 backdrop-blur-sm rounded-tr-3xl rounded-bl-3xl border-2 border-customYellow">

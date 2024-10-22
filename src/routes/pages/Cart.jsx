@@ -1,17 +1,21 @@
+// import hooks
 import { useContext } from "react";
+// import components
 import { CartContext } from "../../context/CartContext";
-import { IoClose } from "react-icons/io5";
 import Card from "../../components/card/Card";
 import CardButton from "../../components/UI/CardButton";
-function Cart() {
+// import icons
+import { IoClose } from "react-icons/io5";
+
+export default function Cart() {
   const { removeItemFromCart, cartItems } = useContext(CartContext);
 
   if (cartItems.length <= 0) {
     return (
       <div>
         <div className="flex justify-center items-center flex-wrap gap-4 p-4">
-          <div className="text-3xl font-extrabold w-[300px] aspect-square flex justify-center items-center shadow-md rounded-3xl m-20">
-            <span>no Item&apos;s in Cart</span>
+          <div className="text-3xl font-extrabold flex justify-center items-center   m-20">
+            <span className="text-center">no Item&apos;s in Cart</span>
           </div>
         </div>
       </div>
@@ -37,5 +41,3 @@ function Cart() {
     </div>
   );
 }
-
-export default Cart;

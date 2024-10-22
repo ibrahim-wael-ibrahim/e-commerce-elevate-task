@@ -1,7 +1,7 @@
 import FeatureCard from "../../components/UI/FeatureCard";
-import HeroSection from "../../components/sections/HeroSection";
-import ContentSection from "../../components/sections/ContentSection";
-
+import HeroSection from "../../components/sections/home/HeroSection";
+import ContentSection from "../../components/sections/home/ContentSection";
+// define features array
 const features = [
   {
     title: "Fast Delivery",
@@ -25,7 +25,7 @@ const features = [
   },
 ];
 
-function Index() {
+export default function Index() {
   return (
     <div>
       <HeroSection />
@@ -48,5 +48,3 @@ function Index() {
     </div>
   );
 }
-
-export default Index;

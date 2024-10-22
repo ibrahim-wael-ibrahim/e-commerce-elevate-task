@@ -1,13 +1,31 @@
+// import library
 import PropTypes from "prop-types";
-import { CiStar } from "react-icons/ci";
-import { FaStar } from "react-icons/fa";
+// import components
 import EyeShowButton from "../UI/EyeShowButton";
+// import icons
+import { FaStar } from "react-icons/fa";
+import { CiStar } from "react-icons/ci";
+// define prop types
+Card.propTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    category: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    rating: PropTypes.shape({
+      rate: PropTypes.number.isRequired,
+      count: PropTypes.number.isRequired,
+    }).isRequired,
+  }).isRequired,
+  actionButton: PropTypes.node.isRequired,
+};
 
-function Card({ product, actionButton }) {
+export default function Card({ product, actionButton }) {
   const { title, price, category, image, rating, id } = product;
 
   return (
-    <article className="w-[400px] h-[580px] p-4 rounded-3xl shadow-lg backdrop-blur-3xl relative">
+    <article className="w-[400px] h-[580px] p-4 rounded-3xl shadow-lg backdrop-blur-3xl relative text-customGray">
       <EyeShowButton id={id} />
       <div className="rounded-2xl w-full h-[300px] relative ">
         <span className="rounded-b-full bg-customGray text-white px-4 py-1 text-xs font-semibold absolute -bottom-[23px] right-3 z-0">
@@ -61,20 +79,3 @@ function Card({ product, actionButton }) {
     </article>
   );
 }
-
-Card.propTypes = {
-  product: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    category: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    rating: PropTypes.shape({
-      rate: PropTypes.number.isRequired,
-      count: PropTypes.number.isRequired,
-    }).isRequired,
-  }).isRequired,
-  actionButton: PropTypes.node.isRequired,
-};
-
-export default Card;

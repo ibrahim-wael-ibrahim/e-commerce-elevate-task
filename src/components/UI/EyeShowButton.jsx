@@ -1,15 +1,21 @@
+//  import hooks
 import { useState } from "react";
+//  import library
+import PropTypes from "prop-types";
+//  import icons
 import { FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+//  define prop types
+EyeShowButton.propTypes = {
+  id: PropTypes.number.isRequired,
+};
 
-function EyeShowButton({ id }) {
+export default function EyeShowButton({ id }) {
   const [isHovered, setIsHovered] = useState(false);
-
   return (
     <Link
       to={`/product/${id}`}
-      className={`absolute top-5 left-5 z-10 p-1 transition-all duration-1000 ease-in-out 
+      className={`absolute top-5 left-5 z-10 p-1 transition-all duration-1000 ease-in-out  text-customGray
           ${
             isHovered
               ? "h-10 w-28 bg-customYellow rounded-full flex justify-evenly items-center"
@@ -32,9 +38,3 @@ function EyeShowButton({ id }) {
     </Link>
   );
 }
-
-EyeShowButton.propTypes = {
-  id: PropTypes.number.isRequired,
-};
-
-export default EyeShowButton;

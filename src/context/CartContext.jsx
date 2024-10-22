@@ -1,6 +1,9 @@
+//  import hooks
 import { createContext, useState } from "react";
+// import library
 import PropTypes from "prop-types";
 import { toast } from "sonner";
+// define prop types
 CartProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
@@ -12,10 +15,8 @@ export const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
-  // length of item's to use in navbar
   const numberOfItemInCart = cartItems.length;
 
-  // Add item to cart
   const addItemToCart = (item) => {
     setCartItems((prevItems) => {
       const isItemInCart = prevItems.some(
@@ -33,12 +34,10 @@ export function CartProvider({ children }) {
     });
   };
 
-  // Remove item from cart
   const removeItemFromCart = (id) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
-  // Clear the cart
   const clearCart = () => {
     setCartItems([]);
   };

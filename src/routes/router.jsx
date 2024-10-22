@@ -1,18 +1,19 @@
+// import library
 import { createBrowserRouter } from "react-router-dom";
-
 // import Root ( layout my site )
 import Root from "./layout/Root";
-
 // import routes ( pages 📄 )
 import Index from "./pages/Index"; // home page 🏠
 import Cart from "./pages/Cart";
 import Shop from "./pages/Shop";
 import Product from "./pages/Product";
+import Page404 from "./pages/Page404"; // not found page 😥
 
-const routes = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <Page404 />,
     children: [
       { index: true, element: <Index /> },
       { path: "shop", element: <Shop /> },
@@ -22,4 +23,4 @@ const routes = createBrowserRouter([
   },
 ]);
 
-export default routes;
+export default router;

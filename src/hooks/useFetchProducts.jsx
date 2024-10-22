@@ -4,7 +4,7 @@ import { useReducer, useEffect } from "react";
 const initialState = {
   data: null,
   status: "loading", // loading, error, or receive
-  error_message: "",
+  error: "",
 };
 
 function reducer(state, action) {
@@ -14,10 +14,10 @@ function reducer(state, action) {
         ...state,
         status: "receive",
         data: action.payload,
-        error_message: "",
+        error: "",
       };
     case "dataFailed":
-      return { ...state, status: "error", error_message: action.payload };
+      return { ...state, status: "error", error: action.payload };
     default:
       throw new Error("Unknown action.");
   }

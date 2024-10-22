@@ -1,7 +1,9 @@
+//  import icons
 import { CiFacebook, CiInstagram, CiTwitter, CiYoutube } from "react-icons/ci";
+//  import components
 import Logo from "../UI/Logo";
 
-function Footer() {
+export default function Footer() {
   return (
     <footer className="bg-customGray h-[300px] w-full flex flex-col justify-between items-center pt-8 mt-20">
       <div className="flex flex-col justify-center items-center gap-4">
@@ -22,5 +24,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

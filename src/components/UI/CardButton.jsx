@@ -8,17 +8,17 @@ CardButton.propTypes = {
   textColor: PropTypes.string,
 };
 
-function CardButton({
+export default function CardButton({
   onClick,
   buttonText,
   icon,
   bgColor = "bg-customYellow",
-  textColor,
+  textColor = "text-customGray",
 }) {
   return (
     <button
       onClick={onClick}
-      className={`${bgColor} w-3/6 hover:w-4/6 transition-all duration-1000 flex h-[50px] p-2 absolute -right-4 rounded-l-full justify-between items-center`}
+      className={`${bgColor} w-3/6 hover:w-4/6 transition-all duration-1000 flex h-[50px] p-2 absolute -right-4 rounded-l-full justify-between items-center `}
     >
       <span className="w-9 aspect-square rounded-full bg-white mx-2 flex justify-center items-center">
         {icon}
@@ -27,5 +27,3 @@ function CardButton({
     </button>
   );
 }
-
-export default CardButton;

@@ -1,7 +1,10 @@
+// import hooks
 import { useState, useContext } from "react";
+// import components
 import { CartContext } from "../../context/CartContext";
 import useModal from "../../hooks/useModal";
-function BubbliesCart() {
+
+export default function BubbliesCart() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
@@ -17,7 +20,7 @@ function BubbliesCart() {
       <ModalClearCart />
       <div
         onClick={toggleMenu}
-        className="w-0 h-0 z-[100] sticky bottom-0 left-0  block"
+        className="w-0 h-0 z-[100] sticky bottom-0 left-0  block text-customGray"
       >
         {isOpen && (
           <div className="w-[200px]  rounded-3xl  backdrop-blur-lg absolute bottom-20 left-5 z-[100] shadow-md flex flex-col justify-end items-start gap-4 p-4">
@@ -56,5 +59,3 @@ function BubbliesCart() {
     </>
   );
 }
-
-export default BubbliesCart;

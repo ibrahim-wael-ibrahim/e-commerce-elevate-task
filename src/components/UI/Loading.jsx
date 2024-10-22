@@ -1,4 +1,4 @@
-function Loading() {
+export default function Loading() {
   return (
     <div className="w-[250px] aspect-square flex flex-col justify-center items-center gap-5 p-2 mx-auto">
       <svg
@@ -49,11 +49,7 @@ function Loading() {
           </g>
         </g>
       </svg>
-      {/* <h1 className="text-2xl font-extrabold pl-8">
-        Loading <span className="loader">...</span>
-      </h1> */}
+
     </div>
   );
 }
-
-export default Loading;

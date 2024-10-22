@@ -1,10 +1,12 @@
+import { Toaster } from "sonner";
 import { Outlet } from "react-router-dom";
+// import components
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import { CartProvider } from "../../context/CartContext";
-import { Toaster } from "sonner";
 import BubbliesCart from "../../components/UI/BubbliesCart";
-function Root() {
+
+export default function Root() {
   return (
     <CartProvider>
       <div className="flex flex-col justify-start items-center h-full w-full">
@@ -19,5 +21,3 @@ function Root() {
     </CartProvider>
   );
 }
-
-export default Root;

@@ -6,18 +6,20 @@ import Loading from "../../components/UI/Loading";
 import Error from "../../components/UI/Error";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-function Product() {
+
+export default function Product() {
   const { productId } = useParams();
-  const { data, status, error_message } = useFetchProducts(productId);
+  const { data, status, error } = useFetchProducts(productId);
   const { addItemToCart } = useContext(CartContext);
 
   if (status === "loading") return <Loading />;
-  if (status === "error") return <Error error={error_message} />;
+  if (status === "error") return <Error error={error} />;
+
   const { title, price, description, category, image, rating } = data;
 
   return (
     <div>
-      <div className="flex justify-center items-center flex-wrap gap-4 p-4">
+      <div className="flex justify-center items-center flex-wrap gap-4 p-4 text-customGray">
         {status === "receive" && (
           <div className="flex justify-center items-start flex-wrap gap-4 p-4">
             <div className="w-[400px] h-[600px] overflow-hidden border-[1px] rounded-3xl p-4 shadow-xl flex justify-center items-center">
@@ -28,8 +30,8 @@ function Product() {
                 loading="lazy"
               />
             </div>
-            <div className="p-4 w-[400px] flex flex-col gap-4 items-start">
-              <h1 className="text-2xl font-bold">{title}</h1>
+            <div className="p-4 w-[400px] flex flex-col gap-4 items-start ">
+              <h1 className="text-2xl font-bold ">{title}</h1>
               <span className="rounded-full px-2.5 py-0.5 bg-customYellow">
                 {category}
               </span>
@@ -85,5 +87,3 @@ function Product() {
     </div>
   );
 }
-
-export default Product;

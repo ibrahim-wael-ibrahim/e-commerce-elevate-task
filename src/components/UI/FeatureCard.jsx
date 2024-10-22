@@ -1,5 +1,6 @@
+// import library
 import PropTypes from "prop-types";
-
+// define prop types
 FeatureCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
@@ -8,7 +9,7 @@ FeatureCard.propTypes = {
 
 function FeatureCard({ title, description, icon }) {
   return (
-    <div className="w-[300px] h-[200px] flex justify-center items-center gap-2">
+    <div className="w-[300px] h-[200px] flex justify-center items-center gap-2 text-customGray">
       <div className="w-[140px] aspect-square">
         <img
           src={icon}

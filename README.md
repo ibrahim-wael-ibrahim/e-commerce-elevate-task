@@ -36,6 +36,7 @@ The goal is to fetch and display products from the Fake Store API, allowing user
 - **Shop Page**: Full product listing fetched from the API.
 - **Cart Page**: Displays items added to the cart with the ability to modify quantities or remove items.
 - **Product Details Page**: Detailed view of a specific product, accessed by clicking on a product card in the shop.
+- **Page 404 ( not found page)**: to show error page when user try navigate wrong url
 
 ### Page Previews
 
@@ -50,6 +51,9 @@ The goal is to fetch and display products from the Fake Store API, allowing user
 
 - **Product Details Page**  
   ![Product Details](./assets/product-details-page.png)
+
+- **Page 404**  
+  ![Product Details](./assets/page-404.png)
 
 ---
 
@@ -85,41 +89,43 @@ By following the recommendations from the Lighthouse audit, the application can 
 ```
 src/
 ├── components
-│   ├── card
-│   │   └── Card.jsx
-│   ├── footer
-│   │   └── Footer.jsx
-│   ├── navbar
-│   │   ├── Navbar.jsx
-│   │   └── NavLinks.jsx
-│   ├── sections
-│   │   ├── ContentSection.jsx
-│   │   └── HeroSection.jsx
-│   └── UI
-│       ├── BubbliesCart.jsx
-│       ├── CardButton.jsx
-│       ├── Error.jsx
-│       ├── EyeShowButton.jsx
-│       ├── FeatureCard.jsx
-│       ├── Loading.jsx
-│       ├── Logo.jsx
-│       └── NavigationLink.jsx
+│   ├── card
+│   │   └── Card.jsx
+│   ├── footer
+│   │   └── Footer.jsx
+│   ├── navbar
+│   │   ├── Navbar.jsx
+│   │   └── NavLinks.jsx
+│   ├── sections
+│   │   └── home
+│   │       ├── ContentSection.jsx
+│   │       └── HeroSection.jsx
+│   └── UI
+│       ├── BubbliesCart.jsx
+│       ├── CardButton.jsx
+│       ├── Error.jsx
+│       ├── EyeShowButton.jsx
+│       ├── FeatureCard.jsx
+│       ├── Loading.jsx
+│       ├── Logo.jsx
+│       └── NavigationLink.jsx
 ├── context
-│   └── CartContext.jsx
+│   └── CartContext.jsx
 ├── hooks
-│   ├── useFetchProducts.jsx
-│   └── useModal.jsx
+│   ├── useFetchProducts.jsx
+│   └── useModal.jsx
 ├── index.css
 ├── main.jsx
 └── routes
     ├── layout
-    │   └── Root.jsx
+    │   └── Root.jsx
     ├── pages
-    │   ├── Cart.jsx
-    │   ├── Index.jsx
-    │   ├── Product.jsx
-    │   └── Shop.jsx
-    └── routes.jsx
+    │   ├── Cart.jsx
+    │   ├── Index.jsx
+    │   ├── Page404.jsx
+    │   ├── Product.jsx
+    │   └── Shop.jsx
+    └── router.jsx
 ```
 
 ## Key Features Explained
@@ -137,7 +143,7 @@ const { ModalUI, setModalIsOpen } = useModal("Confirm action?", handleCallback);
 A custom hook that fetches a list of products from the Fake Store API. It manages loading, error, and successful data fetch states using a `useReducer` approach.
 
 ```js
-const { products, loading, error_message } = useFetchProducts();
+const { products, loading, error } = useFetchProducts();
 ```
 
 ### `BubbliesCart`
