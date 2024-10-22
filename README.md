@@ -25,7 +25,7 @@ The goal is to fetch and display products from the Fake Store API, allowing user
   - Cart
   - Product Details (`/product/:id`)
 - **Responsive Design**: The layout is fully responsive using CSS Grid/Flexbox for optimal viewing on various devices.
-- **Loading Indicator**: Shows a loading spinner while fetching data.
+- **Loading Indicator**: Shows a loading cart while fetching data.
 - **Error Handling**: Displays a user-friendly error message if the data fetch fails.
 - **Modals**: Implemented custom modal windows for user actions such as clearing the cart or sending an order.
 - **BubbliesCart**: A fun cart icon that bubbles up and opens a modal for sending or clearing the cart.
@@ -112,13 +112,15 @@ src/
 ├── context
 │   └── CartContext.jsx
 ├── hooks
-│   ├── useFetchProducts.jsx
 │   └── useModal.jsx
 ├── index.css
 ├── main.jsx
 └── routes
     ├── layout
     │   └── Root.jsx
+    ├── loaders
+    │   ├── productLoader.jsx
+    │   └── ShopLoader.jsx
     ├── pages
     │   ├── Cart.jsx
     │   ├── Index.jsx
@@ -136,14 +138,6 @@ A custom hook for creating reusable modals. It accepts a message and a callback,
 
 ```js
 const { ModalUI, setModalIsOpen } = useModal("Confirm action?", handleCallback);
-```
-
-### `useFetchProducts`
-
-A custom hook that fetches a list of products from the Fake Store API. It manages loading, error, and successful data fetch states using a `useReducer` approach.
-
-```js
-const { products, loading, error } = useFetchProducts();
 ```
 
 ### `BubbliesCart`

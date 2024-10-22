@@ -8,6 +8,8 @@ import Cart from "./pages/Cart";
 import Shop from "./pages/Shop";
 import Product from "./pages/Product";
 import Page404 from "./pages/Page404"; // not found page 😥
+import { shopLoader } from "./loaders/ShopLoader";
+import { productLoader } from "./loaders/productLoader";
 
 const router = createBrowserRouter([
   {
@@ -16,9 +18,13 @@ const router = createBrowserRouter([
     errorElement: <Page404 />,
     children: [
       { index: true, element: <Index /> },
-      { path: "shop", element: <Shop /> },
+      { path: "shop", element: <Shop />, loader: shopLoader },
       { path: "cart", element: <Cart /> },
-      { path: "product/:productId", element: <Product /> },
+      {
+        path: "product/:productId",
+        element: <Product />,
+        loader: productLoader,
+      },
     ],
   },
 ]);
